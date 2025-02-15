@@ -3,15 +3,28 @@ fn array_and_vec() -> ([i32; 4], Vec<i32>) {
 
     // TODO: Create a vector called `v` which contains the exact same elements as in the array `a`.
     // Use the vector macro.
-    // let v = ???;
+    let v = Vec::from(a);
 
     (a, v)
 }
 
 fn main() {
     // You can optionally experiment here.
+    let foo = Foo {name : "foo".to_string()};
+    let boo = Foo {name : "boo".to_string()};
+
+    let a = [foo, boo];
+
+    let b = Vec::from(a);
+
+    // println!("{}", a[0].name); yep move indeed
+
+
 }
 
+struct Foo {
+    name: String
+}
 #[cfg(test)]
 mod tests {
     use super::*;
